@@ -1,0 +1,22 @@
+{
+    "title": "创建openGauss MoocStudio章节与课程",
+    "description": "学习如何在openGauss MoocStudio中创建新的章节与课程",
+    "logo": "./assets/logo.jpg",
+    "poster": "./assets/poster.png",
+    "cover": "./assets/cover.png",
+    "container_live_time": "30",
+    "chapters": [
+      {
+        "content_dir": "create-chapter",
+        "title": "创建openGauss MoocStudio-章节",
+        "description": "学习如何在openGauss MoocStudio中创建新的章节",
+        "estimated_time": "10 min"
+      },
+      {
+        "content_dir": "create-course",
+        "title": "创建openGauss MoocStudio-课程",
+        "description": "学习如何在openGauss MoocStudio中创建新的课程",
+        "estimated_time": "10 min"
+      }
+    ]
+  }

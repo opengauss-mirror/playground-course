@@ -1,0 +1,37 @@
+{
+  "title": "提交修改",
+  "description": "学习如何初始化Git仓库并提交修改",
+  "details": {
+    "steps": [
+      {
+        "title": "Step 1 - 配置你的Git",
+        "md_file": "step1.md"
+      },
+      {
+        "title": "Step 2 - Git Init",
+        "md_file": "step2.md"
+      },
+      {
+        "title": "Step 3 - Git Add",
+        "md_file": "step3.md"
+      },
+      {
+        "title": "Step 4 - Git Commit",
+        "md_file": "step4.md"
+      },
+      {
+        "title": "Step 5 - Git Ingore",
+        "md_file": "step5.md"
+      }
+    ],
+    "introduction": {
+      "md_file": "intro.md"
+    },
+    "finish": {
+      "md_file": "finish.md"
+    }
+  },
+  "backend": {
+    "image_id": "opengauss-3.0.0"
+  }
+}

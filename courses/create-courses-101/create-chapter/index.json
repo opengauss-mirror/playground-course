@@ -1,0 +1,25 @@
+{
+  "title": "创建你的第一个openEuler MoocStudio章节",
+  "description": "学习如何创建openEuler MoocStudio章节",
+  "details": {
+    "steps": [
+      {
+        "title": "Step 1 - 章节结构",
+        "md_file": "step1.md"
+      },
+      {
+        "title": "Step 2 - 语法",
+        "md_file": "step2.md"
+      }
+    ],
+    "introduction": {
+      "md_file": "intro.md"
+    },
+    "finish": {
+      "md_file": "finish.md"
+    }
+  },
+  "backend": {
+    "image_id": "openeuler-20.03-lts-sp1"
+  }
+}

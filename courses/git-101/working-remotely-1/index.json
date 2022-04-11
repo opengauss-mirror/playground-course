@@ -1,0 +1,33 @@
+{
+  "title": "远端操作-1",
+  "description": "学习如何进行远端操作",
+  "details": {
+    "steps": [
+      {
+        "title": "Step 1 - Git Diff",
+        "md_file": "step1.md"
+      },
+      {
+        "title": "Step 2 - Git Remote",
+        "md_file": "step2.md"
+      },
+      {
+        "title": "Step 3 - Git Commit",
+        "md_file": "step3.md"
+      },
+      {
+        "title": "Step 4 - Git Push",
+        "md_file": "step4.md"
+      }
+    ],
+    "introduction": {
+      "md_file": "intro.md"
+    },
+    "finish": {
+      "md_file": "finish.md"
+    }
+  },
+  "backend": {
+    "image_id": "openGauss-3.0.0"
+  }
+}
