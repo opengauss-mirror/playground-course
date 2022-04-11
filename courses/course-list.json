@@ -1,0 +1,24 @@
+{
+  "courses": [
+      {
+        "id": "1",
+        "content_dir": "git-101",
+        "status": ["online", "test"]
+      },
+      {
+        "id": "2",
+        "content_dir": "make-and-packaging",
+        "status": ["online", "test"]
+      },
+      {
+        "id": "3",
+        "content_dir": "playground",
+        "status": ["online", "test"]
+      },
+      {
+        "id": "99",
+        "content_dir": "create-courses-101",
+        "status": ["online", "test"]
+      }
+  ]
+}

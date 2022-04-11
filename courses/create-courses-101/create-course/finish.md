@@ -1,0 +1,1 @@
+恭喜！您已经掌握了如何将一系列openEuler MoocStudio章节组织成为openEuler MoocStudio课程。

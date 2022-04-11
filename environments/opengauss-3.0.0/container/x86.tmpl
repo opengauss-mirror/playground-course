@@ -1,0 +1,52 @@
+apiVersion: cs.opensourceways.com/v1alpha1
+kind: CodeServer
+metadata:
+  # [Generated] resource identity, should be identical to other code server resource
+  name: {{ .Name }}
+  namespace: default
+spec:
+  runtime: gotty
+  # [Generated] instance host subdomain, should be identical and url safe
+  subdomain: {{ .Subdomain }}
+  image: "opensourceway/opengauss-3.0.0:latest@sha256:4e94a5b8e3636df00eebb042e43c1941dc46c9395cce54f96e414bee0eab3c57"
+  storageSize: "500Mi"
+  storageName: "emptyDir"
+  ingressBandwidth: "10M"
+  egressBandwidth: "1M"
+  inactiveAfterSeconds: 0
+  recycleAfterSeconds: 600
+  readinessProbe:
+    httpGet:
+      path: "/active-time"
+      # connection port will be updated according to the http or https schema
+      port: 80
+    initialDelaySeconds: 2
+    periodSeconds: 2
+    timeoutSeconds: 2
+  workspaceLocation: "/workspace"
+  envs:
+    - name: GOTTY_ONLY_ENABLE_BACKEND_WS_SERVER
+      value: "false"
+    - name: GOTTY_CREDENTIAL
+      # [Generated] instance websocket connection credential example:name:password
+      value: {{ .NamePassword }}
+    - name: GOTTY_MAX_CONNECTION
+      value: "10"
+    - name: COMMUNITY_EMAIL
+      # [Generated] community contact email
+      value: {{ .ContactEmail }}
+    - name: GOTTY_WS_ORIGIN
+      value: ".*"
+    - name: GOTTY_PERMIT_WRITE
+      value: "true"
+  args:
+    - zsh
+  connectProbe: "/active-time"
+  privileged: false
+  resources:
+    requests:
+      cpu: 500m
+      memory: 500Mi
+    limits:
+      cpu: 500m
+      memory: 500Mi

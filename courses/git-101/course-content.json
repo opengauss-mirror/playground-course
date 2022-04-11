@@ -1,0 +1,35 @@
+{
+    "title": "Git分布式版本控制工具",
+    "description": "学习Git分布式版本控制工具的基础知识与基本使用",
+    "logo": "./assets/logo.png",
+    "poster": "./assets/poster.png",
+    "cover": "./assets/cover.png",
+    "container_live_time": "60",
+    "chapters": [
+      {
+        "content_dir": "committing-changes",
+        "title": "提交修改",
+        "description": "学习如何初始化Git仓库并提交修改",
+        "estimated_time": "10 min"
+      },
+      {
+        "content_dir": "working-remotely-1",
+        "title": "远端操作-1",
+        "description": "学习如何推送修改到远端仓库",
+        "estimated_time": "10 min"
+      },
+      {
+        "content_dir": "working-remotely-2",
+        "title": "远端操作-2",
+        "description": "学习如何推送修改到远端仓库",
+        "estimated_time": "10 min"
+      },
+      {
+        "content_dir": "solving-conflict",
+        "title": "解决冲突",
+        "description": "学习如何解决冲突",
+        "estimated_time": "10 min"
+      }
+    ]
+  }
+  
