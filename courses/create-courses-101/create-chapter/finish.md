@@ -1,1 +1,1 @@
-恭喜！您已经掌握了在openEuler MoocStudio中创建章节内容的基本知识。
+恭喜！您已经掌握了在openGauss MoocStudio中创建章节内容的基本知识。
