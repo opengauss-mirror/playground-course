@@ -1,4 +1,4 @@
-openEuler MoocStudio课程通过创建course-content文件来进行组织，采用JSON格式，course-content文件用来定义哪些章节需要被包含在本课程内以及各章节的顺序。
+openGauss MoocStudio课程通过创建course-content文件来进行组织，采用JSON格式，course-content文件用来定义哪些章节需要被包含在本课程内以及各章节的顺序。
 
 
 ## 定义章节
@@ -10,8 +10,8 @@ openEuler MoocStudio课程通过创建course-content文件来进行组织，采�
     chapters:[
         {
             "chapter_id": "create-chapter",
-            "title": "创建openEuler MoocStudio章节",
-            "description": "学习如何在openEuler MoocStudio中创建新的章节"
+            "title": "创建openGauss MoocStudio章节",
+            "description": "学习如何在openGauss MoocStudio中创建新的章节"
         },
         ...
     ]

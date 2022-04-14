@@ -1,4 +1,4 @@
-一个openEuler MoocStudio章节中所包含的内容通过一系列的Markdown文件、Bash脚本以及JSON文件进行描述和组织。
+一个openGauss MoocStudio章节中所包含的内容通过一系列的Markdown文件、Bash脚本以及JSON文件进行描述和组织。
 
 ## Task
 
@@ -6,7 +6,7 @@
 
 `[[git clone https://github.com/opensourceways/playground-courses.git playground-course-examples]]{{RUN}}`
 
-在课程目录中，你将看到一系列openEuler Playground课程的相应示例，您现在正在阅读的示例就位于其中，使用下面的命令查看它是如何组织的：
+在课程目录中，你将看到一系列openGauss Playground课程的相应示例，您现在正在阅读的示例就位于其中，使用下面的命令查看它是如何组织的：
 
 `[[ls -lha playground-course-examples/courses/create-courses-101/create-chapter]]{{RUN}}`
 

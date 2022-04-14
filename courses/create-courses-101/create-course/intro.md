@@ -1,3 +1,3 @@
-在本章节中，您将学习如何将一系列openEuler MoocStudio章节组织成为openEuler MoocStudio课程。
+在本章节中，您将学习如何将一系列openGauss MoocStudio章节组织成为openGauss MoocStudio课程。
 
 通过将内容相关联的章节组织成为课程并按照顺序进行学习可以为用户提供更系统化的学习体验

@@ -1,6 +1,6 @@
 {
-  "title": "创建你的第一个openEuler MoocStudio章节",
-  "description": "学习如何创建openEuler MoocStudio章节",
+  "title": "创建你的第一个openGauss MoocStudio章节",
+  "description": "学习如何创建openGauss MoocStudio章节",
   "details": {
     "steps": [
       {
@@ -20,6 +20,6 @@
     }
   },
   "backend": {
-    "image_id": "openeuler-20.03-lts-sp1"
+    "image_id": "opengauss-3.0.0"
   }
 }

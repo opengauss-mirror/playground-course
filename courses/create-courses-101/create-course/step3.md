@@ -1,4 +1,4 @@
-openEuler MoocStudio课程还可以引用其他现有openEuler MoocStudio中的章节，以促进基础知识内容的重复利用。
+openGauss MoocStudio课程还可以引用其他现有openGauss MoocStudio中的章节，以促进基础知识内容的重复利用。
 
 可以通过使用下面的定义方式进行章节重用:
 
