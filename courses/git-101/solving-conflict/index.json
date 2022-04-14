@@ -33,6 +33,6 @@
     }
   },
   "backend": {
-    "image_id": "openGauss-3.0.0"
+    "image_id": "opengauss-3.0.0"
   }
 }
