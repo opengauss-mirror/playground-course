@@ -1,14 +1,19 @@
 {
   "courses": [
-      {
-        "id": "1",
-        "content_dir": "git-101",
-        "status": ["online", "test"]
-      },
-      {
-        "id": "99",
-        "content_dir": "create-courses-101",
-        "status": ["online", "test"]
-      }
+    {
+      "id": "1",
+      "content_dir": "openGauss-101",
+      "status": ["online", "test"]
+    },
+    {
+      "id": "2",
+      "content_dir": "git-101",
+      "status": ["online", "test"]
+    },
+    {
+      "id": "99",
+      "content_dir": "create-courses-101",
+      "status": ["online", "test"]
+    }
   ]
 }
