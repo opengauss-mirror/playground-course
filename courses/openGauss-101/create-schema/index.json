@@ -1,0 +1,49 @@
+{
+  "title": "创建数据表",
+  "description": "学习如何在openGauss数据库中创建数据库并插入数据",
+  "details": {
+    "steps": [
+      {
+        "title": "Step 1 - 创建Schema",
+        "md_file": "step1.md"
+      },
+      {
+        "title": "Step 2 - 创建Table",
+        "md_file": "step2.md"
+      },
+      {
+        "title": "Step 3 - 导入Client数据",
+        "md_file": "step3.md"
+      },
+      {
+        "title": "Step 4 - 导入Bank Card数据",
+        "md_file": "step4.md"
+      },
+      {
+        "title": "Step 5 - 导入Finance Product数据",
+        "md_file": "step5.md"
+      },
+      {
+        "title": "Step 6 - 导入Fund数据",
+        "md_file": "step6.md"
+      },
+      {
+        "title": "Step 7 - 导入Insurance数据",
+        "md_file": "step7.md"
+      },
+      {
+        "title": "Step 8 - 导入Property数据",
+        "md_file": "step8.md"
+      }
+    ],
+    "introduction": {
+      "md_file": "intro.md"
+    },
+    "finish": {
+      "md_file": "finish.md"
+    }
+  },
+  "backend": {
+    "image_id": "opengauss-3.0.0"
+  }
+}
