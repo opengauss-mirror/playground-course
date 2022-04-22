@@ -2,24 +2,23 @@
 
 ## 任务
 
-在普通表property上创建索引：
+在普通表`property`上创建索引：
 
 `[[CREATE INDEX idx_property ON property(pro_c_id DESC,pro_income,pro_purchase_time);]]{{RUN}}`
 
-重建property表的idx_property索引：
+重建`property`表的`idx_property`索引：
 
 ```
 [[
 DROP INDEX idx_property;
 CREATE INDEX idx_property ON property(pro_c_id DESC,pro_income,pro_purchase_time);
-]]
-{{PRINT}}
+]]{{RUN}}
 ```
 
-索引重命名索引idx_property为idx_property_temp：
+索引重命名索引`idx_property`为`idx_property_temp`：
 
 `[[ALTER INDEX idx_property RENAME TO idx_property_temp;]]{{RUN}}`
 
-删除索引idx_property_temp：
+删除索引`idx_property_temp`：
 
 `[[DROP INDEX idx_property_temp;]]{{RUN}}`

@@ -2,7 +2,7 @@
 
 ## 任务
 
-在SQL编辑框中输入如下语句，对insurance表进行数据初始化:
+在SQL编辑框中输入如下语句，对`insurance`表进行数据初始化:
 
 ```
 [[
@@ -12,8 +12,8 @@ INSERT INTO insurance(i_name,i_id,i_amount,i_person,i_year,i_project) VALUES
 ('意外保险',3,5000,'所有人',30,'平安保险'),
 ('医疗保险',4,2000,'所有人',30,'平安保险'),
 ('财产损失保险',5,1500,'中年人',30,'平安保险');
-]]{{PRINT}}
+]]{{RUN}}
 ```
 
-查询insurance表的插入条目数：
+查询`insurance`表的插入条目数：
 `[[select count(*) from insurance;]]{{RUN}}`
