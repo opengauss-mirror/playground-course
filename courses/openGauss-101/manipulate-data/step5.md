@@ -1,27 +1,14 @@
-子查询
+连接查询
 
 ## 任务
 
-通过子查询，查询保险产品中保险金额大于平均值的保险名称和适用人群：
+半连接查询用户编号在银行卡表中出现的用户的编号，用户姓名和身份证：
 
-`[[SELECT i1.i_name,i1.i_amount,i1.i_person FROM insurance i1 WHERE i_amount > (SELECT avg(i_amount) FROM insurance i2);]]{{RUN}}`
+`[[SELECT c_id,c_name,c_id_card FROM client WHERE EXISTS (SELECT * FROM bank_card WHERE client.c_id = bank_card.b_c_id);]]{{RUN}}`
 
-ORDER BY和GROUP BYORDER BY子句按照保额降序查询保险编号大于2的保险名称，保额和适用人群：
+反连接查询银行卡号不是‘622202130202000001*’（*表示未知）的用户的编号，姓名和身份证：
 
-`[[SELECT i_name,i_amount,i_person FROM insurance WHERE i_id>2 ORDER BY i_amount DESC;]]{{RUN}}`
+`[[SELECT c_id,c_name,c_id_card FROM client WHERE c_id NOT IN (SELECT b_c_id FROM bank_card WHERE b_number LIKE '622202130202000001_');]]{{RUN}}`
 
-GROUP BY子句 查询各理财产品信息总数，按照p_year分组：
+按`q`返回交互模式。
 
-`[[SELECT p_year,count(p_id) FROM finances_product GROUP BY p_year;]]{{RUN}}`
-
-HAVING和WITH ASHAVING子句查询保险金额统计数量等于2的适用人群数：
-
-`[[SELECT i_person,count(i_amount) FROM insurance GROUP BY i_person HAVING count(i_amount)=2;]]{{RUN}}`
-
-备注：HAVING子句依附于GROUP BY子句而存在。
-
-WITH AS子句使用WITH AS查询基金信息表：
-
-`[[WITH temp AS (SELECT f_name,ln(f_amount) FROM fund ORDER BY f_manager DESC) SELECT * FROM temp;]]{{RUN}}`
-
-备注：该语句为定义一个SQL片段，该SQL片段会被整个SQL语句用到。可以使SQL语句的可读性更高。存储SQL片段的表与基本表不同，是一个虚表。数据库不存放对应的定义和数据，这些数据仍存放在原来的基本表中。若基本表中的数据发生变化，从存储SQL片段的表中查询出的数据也随之改变。

@@ -4,20 +4,24 @@
   "details": {
     "steps": [
       {
-        "title": "Step 1 - 更新数据",
+        "title": "Step 1 - 准备",
         "md_file": "step1.md"
       },
       {
-        "title": "Step 2 - 删除数据",
+        "title": "Step 2 - 更新数据",
         "md_file": "step2.md"
       },
       {
-        "title": "Step 3 - 新用户的创建、授权和连接数据库",
+        "title": "Step 3 - 删除数据",
         "md_file": "step3.md"
       },
       {
-        "title": "Step 4 - 删除Schema",
-        "md_file": "step3.md"
+        "title": "Step 4 - 新用户的创建、授权和连接数据库",
+        "md_file": "step4.md"
+      },
+      {
+        "title": "Step 5 - 删除Schema",
+        "md_file": "step5.md"
       }
     ],
     "introduction": {

@@ -4,16 +4,20 @@
   "details": {
     "steps": [
       {
-        "title": "Step 1 - 创建视图",
+        "title": "Step 1 - 准备",
         "md_file": "step1.md"
       },
       {
-        "title": "Step 2 - 修改&删除视图",
+        "title": "Step 2 - 创建视图",
         "md_file": "step2.md"
       },
       {
-        "title": "Step 3 - 索引",
+        "title": "Step 3 - 修改&删除视图",
         "md_file": "step3.md"
+      },
+      {
+        "title": "Step 4 - 索引",
+        "md_file": "step4.md"
       }
     ],
     "introduction": {
