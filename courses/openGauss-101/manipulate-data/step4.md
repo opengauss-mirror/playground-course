@@ -1,14 +1,38 @@
-连接查询
+本小节的金融数据库实验将会带领读者学习到更深一层的查询操作，让学习者能够更深入的去了解openGauss数据库的复杂操作。
 
 ## 任务
 
-半连接查询用户编号在银行卡表中出现的用户的编号，用户姓名和身份证：
+单表查询查询银行卡信息表：
 
-`[[SELECT c_id,c_name,c_id_card FROM client WHERE EXISTS (SELECT * FROM bank_card WHERE client.c_id = bank_card.b_c_id);]]{{RUN}}`
-
-反连接查询银行卡号不是‘622202130202000001*’（*表示未知）的用户的编号，姓名和身份证：
-
-`[[SELECT c_id,c_name,c_id_card FROM client WHERE c_id NOT IN (SELECT b_c_id FROM bank_card WHERE b_number LIKE '622202130202000001_');]]{{RUN}}`
+`[[SELECT b_number,b_type FROM bank_card;]]{{RUN}}`
 
 按`q`返回交互模式。
 
+条件查询查询资产信息中‘可用’的资产数据：
+
+`[[select * from property where pro_status='可用';]]{{RUN}}`
+
+按`q`返回交互模式。
+
+聚合查询查询用户表中有多少个用户：
+
+`[[SELECT count(*) FROM client;]]{{RUN}}`
+
+查询银行卡信息表中，储蓄卡和信用卡的个数：
+
+`[[SELECT b_type,COUNT(*) FROM bank_card GROUP BY b_type;]]{{RUN}}`
+
+查询保险信息表中，保险金额的平均值：
+
+`[[SELECT AVG(i_amount) FROM insurance;]]{{RUN}}`
+
+查询保险信息表中保险金额的最大值和最小值所对应的险种和金额：
+
+```
+[[
+select i_name,i_amount from insurance where i_amount in (select max(i_amount) from insurance)
+union
+select i_name,i_amount from insurance where i_amount in (select min(i_amount) from insurance);
+]]
+{{PRINT}}
+```

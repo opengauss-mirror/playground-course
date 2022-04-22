@@ -1,38 +1,29 @@
-删除Schema
+假设C银行的某新员工想要在自己的用户下去访问sys用户下的金融数据库，则该员工需要向sys申请添加相关权限
 
 
 ## 任务
 
-使用gsql工具登录数据库：
+创建用户dbuser，并赋予创建数据库的权限，创建用户“dbuser”，密码为“Gauss#3demo”：
 
-`[[gsql -d finance -p 5432 -r -h 127.0.0.1]]{{RUN}}`
+`[[CREATE USER dbuser with createdb IDENTIFIED BY 'Gauss#3demo';]]{{RUN}}`
 
-输入密码：
-`openGauss@1234`
+授权用户给用户dbuser授予finance数据库下bank_card表的查询和插入权限，并将SCHEMA的权限也授予dbuser用户：
 
-使用“\dn”查看数据库下的schema：
+`[[GRANT SELECT,INSERT ON finance.bank_card TO dbuser;]]{{RUN}}`
 
-`[[\dn]]{{RUN}}`
+`[[GRANT ALL ON SCHEMA finance to dbuser;]]{{RUN}}`
 
-设置默认查询路径设置默认查询路径search_path 为finance：
+退出数据库：
 
-`[[set search_path to finance;]]{{RUN}}`
+`[[\q]]{{RUN}}`
 
-使用“\dt”命令可以看到在finance中的对象：
+使用新用户连接finance数据库使用操作系统omm用户在新的窗口登录并执行以下命令，并在输入对应的密码：`Gauss#3demo`
 
-`[[\dt]]{{RUN}}`
+`[[gsql -d finance -U dbuser -p 5432 -r -h 127.0.0.1]]{{RUN}}`
 
-使用DROP SCHEMA 命令尝试删除finance，会有报错，因为finance下存在对象：
+查询bank_card表数据 查询finance数据库的表bank_card中，b_c_id<10的数据条目：
 
-`[[DROP SCHEMA finance;]]{{RUN}}`
-
-使用DROP SCHEMA…..CASCADE进行级联删除，会将finance连同下的对象一起删除：
-
-`[[DROP SCHEMA finance CASCADE;]]{{RUN}}`
-
-使用“\dt”命令可以看到在finance和public中的对象，对象已删除：
-
-`[[\dt]]{{RUN}}`
+`[[select * from finance. bank_card where b_c_id<10;]]{{RUN}}`
 
 退出数据库：
 

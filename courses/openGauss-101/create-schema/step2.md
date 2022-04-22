@@ -90,4 +90,5 @@ pro_c_id INT NOT NULL,
         pro_income INT,
         pro_purchase_time DATE
 );
+]]
 ```

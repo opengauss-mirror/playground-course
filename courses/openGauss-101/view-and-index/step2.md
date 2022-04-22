@@ -1,19 +1,12 @@
-创建完成的视图可以进行修改
+视图是一个虚拟表，是sql的查询结果，其内容由查询定义。对于来自多张关联表的复杂查询，就不得不使用十分复杂的SQL语句进行查询，造成极差的体验感。使用视图之后，可以极大的简化操作，使用视图不需要关心相应表的结构、关联条件等。
 
-## 任务 
 
-修改视图内容修改视图，在原有查询的基础上，过滤出信用卡用户：
+## 任务
 
-`[[CREATE OR REPLACE VIEW v_client as SELECT c_id,c_name,c_id_card FROM client WHERE EXISTS (SELECT * FROM bank_card WHERE client.c_id = bank_card.b_c_id and bank_card.b_type='信用卡');]]{{RUN}}`
+针对“查询用户编号在银行卡表中出现的用户的编号，用户姓名和身份证” 的查询，创建视图：
 
-使用视图进行查询：
+`[[CREATE VIEW v_client as SELECT c_id,c_name,c_id_card FROM client WHERE EXISTS (SELECT * FROM bank_card WHERE client.c_id = bank_card.b_c_id);]]{{RUN}}`
 
-`[[select * from v_client;]]{{RUN}}`
+查询视图：
 
-修改视图名称：
-
-`[[ALTER VIEW v_client RENAME TO v_client_new;]]{{RUN}}`
-
-将v_client视图删除，删除视图不会影响基表：
-
-`[[DROP VIEW v_client_new;]]{{RUN}}`
+`[[SELECT * FROM v_client;]]{{RUN}}`

@@ -1,36 +1,23 @@
-本小节的金融数据库实验将会带领读者学习到更深一层的查询操作，让学习者能够更深入的去了解openGauss数据库的复杂操作。
+Schema创建完成后，就可以在该Schema下创建相应的数据表格
 
-## 任务
+## 任务 
 
-单表查询查询银行卡信息表：
+向finances_product表添加约束为finances_product表的p_amount列添加大于等于0的约束：
 
-`[[SELECT b_number,b_type FROM bank_card;]]{{RUN}}`
+`[[ALTER table finances_product ADD CONSTRAINT c_p_mount CHECK (p_amount >=0);]]{{RUN}}`
 
-按`q`返回交互模式。
+尝试插入数据测试尝试手工插入一条金额小于0的记录，因为不满足约束条件，因此本条命令执行会失败：
 
-条件查询查询资产信息中‘可用’的资产数据：
+`[[INSERT INTO finances_product(p_name,p_id,p_description,p_amount,p_year) VALUES ('信贷资产',10,'一般指银行作为委托人将通过发行理财产品募集资金委托给信托公司，信托公司作为受托人成立信托计划，将信托资产购买理财产品发售银行或第三方信贷资产。',-10,6);]]{{RUN}}`
 
-`[[select * from property where pro_status='可用';]]{{RUN}}`
+向fund表添加约束为fund表的f_amount列添加大于等于0的约束：
 
-按`q`返回交互模式。
+`[[ALTER table fund ADD CONSTRAINT c_f_mount CHECK (f_amount >=0);]]{{RUN}}`
 
-聚合查询查询用户表中有多少个用户：
+向insurance表添加约束 为insurance表的i_amount列添加大于等于0的约束：
 
-`[[SELECT count(*) FROM client;]]{{RUN}}`
+`[[ALTER table insurance ADD CONSTRAINT c_i_mount CHECK (i_amount >=0);]]{{RUN}}`
 
-查询银行卡信息表中，储蓄卡和信用卡的个数：
+验证约束的创建结果：
 
-`[[SELECT b_type,COUNT(*) FROM bank_card GROUP BY b_type;]]{{RUN}}`
-
-查询保险信息表中，保险金额的平均值：
-
-`[[SELECT AVG(i_amount) FROM insurance;]]{{RUN}}`
-
-查询保险信息表中保险金额的最大值和最小值所对应的险种和金额：
-
-```
-select i_name,i_amount from insurance where i_amount in (select max(i_amount) from insurance)
-union
-select i_name,i_amount from insurance where i_amount in (select min(i_amount) from insurance);
-{{PRINT}}
-```
+`[[select conname,connamespace,contype from pg_constraint where conrelid in (select oid from pg_class where relname in ('fund','insurance'));]]{{RUN}}`
