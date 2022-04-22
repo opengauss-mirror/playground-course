@@ -3,19 +3,12 @@
 
 ## 任务
 
-使用gsql工具登录数据库：
+使用`gsql`工具登录`finance`数据库：
 
-`[[gsql -d postgres -p 5432 -r -h 127.0.0.1]]{{RUN}}`
-
-输入密码：
-`openGauss@1234`
-
-连接finance数据库：
-
-`[[\connect finance]]{{RUN}}`
+`[[gsql -d finance -p 5432 -r -h 127.0.0.1]]{{RUN}}`
 
 输入密码：
 `openGauss@1234`
 
-将默认搜索路径设为finance：
+将默认搜索路径设为`finance`：
 `[[SET search_path TO finance;]]{{RUN}}`

@@ -2,7 +2,7 @@
 
 ## 任务
 
-在SQL编辑框中输入如下语句，对client表进行数据初始化执行insert操作：
+在SQL编辑框中输入如下语句，对`client`表进行数据初始化执行`insert`操作：
 
 ```
 [[
@@ -37,8 +37,8 @@ INSERT INTO client(c_id,c_name,c_mail,c_id_card,c_phone,c_password) VALUES
 (28,'钱一','qianyi@huawei.com','340211199301010028','18815650028','gaussdb_028'),
 (29,'钱二','qianer@huawei.com','340211199301010029','18815650029','gaussdb_029'),
 (30,'钱三','qiansan@huawei.com','340211199301010030','18815650030','gaussdb_030');
-]]{{PRINT}}
+]]{{RUN}}
 ```
 
-查询client表的插入条目数：
+查询`client`表的插入条目数：
 `[[select count(*) from client;]]{{RUN}}`

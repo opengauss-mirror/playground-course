@@ -33,6 +33,5 @@
 select i_name,i_amount from insurance where i_amount in (select max(i_amount) from insurance)
 union
 select i_name,i_amount from insurance where i_amount in (select min(i_amount) from insurance);
-]]
-{{PRINT}}
+]]{{RUN}}
 ```

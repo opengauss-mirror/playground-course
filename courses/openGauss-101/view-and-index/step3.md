@@ -14,6 +14,6 @@
 
 `[[ALTER VIEW v_client RENAME TO v_client_new;]]{{RUN}}`
 
-将v_client视图删除，删除视图不会影响基表：
+将`v_client`视图删除，删除视图不会影响基表：
 
 `[[DROP VIEW v_client_new;]]{{RUN}}`

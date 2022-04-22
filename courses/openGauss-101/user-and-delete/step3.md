@@ -6,7 +6,7 @@
 
 `[[SELECT * FROM fund;]]{{RUN}}`
 
-删除表fund中，f_id<3的数据条目：
+删除表`fund`中，`f_id<3`的数据条目：
 
 `[[DELETE FROM fund WHERE f_id<3;]]{{RUN}}`
 

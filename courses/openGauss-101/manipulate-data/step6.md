@@ -6,21 +6,21 @@
 
 `[[SELECT i1.i_name,i1.i_amount,i1.i_person FROM insurance i1 WHERE i_amount > (SELECT avg(i_amount) FROM insurance i2);]]{{RUN}}`
 
-ORDER BY和GROUP BYORDER BY子句按照保额降序查询保险编号大于2的保险名称，保额和适用人群：
+`ORDER BY`和`GROUP BYORDER BY`子句按照保额降序查询保险编号大于`2`的保险名称，保额和适用人群：
 
 `[[SELECT i_name,i_amount,i_person FROM insurance WHERE i_id>2 ORDER BY i_amount DESC;]]{{RUN}}`
 
-GROUP BY子句 查询各理财产品信息总数，按照p_year分组：
+`GROUP BY`子句 查询各理财产品信息总数，按照`p_year`分组：
 
 `[[SELECT p_year,count(p_id) FROM finances_product GROUP BY p_year;]]{{RUN}}`
 
-HAVING和WITH ASHAVING子句查询保险金额统计数量等于2的适用人群数：
+`HAVING`和`WITH ASHAVING`子句查询保险金额统计数量等于`2`的适用人群数：
 
 `[[SELECT i_person,count(i_amount) FROM insurance GROUP BY i_person HAVING count(i_amount)=2;]]{{RUN}}`
 
-备注：HAVING子句依附于GROUP BY子句而存在。
+备注：`HAVING`子句依附于`GROUP BY`子句而存在。
 
-WITH AS子句使用WITH AS查询基金信息表：
+`WITH AS`子句使用`WITH AS`查询基金信息表：
 
 `[[WITH temp AS (SELECT f_name,ln(f_amount) FROM fund ORDER BY f_manager DESC) SELECT * FROM temp;]]{{RUN}}`
 

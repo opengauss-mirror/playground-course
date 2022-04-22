@@ -2,7 +2,7 @@
 
 ## 任务
 
-在SQL编辑框中输入如下语句，对bank_card表进行数据初始化执行insert操作：
+在SQL编辑框中输入如下语句，对`bank_card`表进行数据初始化执行`insert`操作：
 
 ```
 [[
@@ -27,8 +27,8 @@ INSERT INTO bank_card(b_number,b_type,b_c_id) VALUES
 ('6222021302020000018','储蓄卡',27),
 ('6222021302020000019','储蓄卡',12),
 ('6222021302020000020','储蓄卡',29);
-]]{{PRINT}}
+]]{{RUN}}
 ```
 
-查询bank_card表的插入条目数：
+查询`bank_card`表的插入条目数：
 `[[select count(*) from bank_card;]]{{RUN}}`
