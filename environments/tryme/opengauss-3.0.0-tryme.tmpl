@@ -19,9 +19,9 @@ spec:
       /usr/bin/pgweb --bind=0.0.0.0 --listen=8080 --url "postgres://opengauss:openGauss2022@0.0.0.0:5432/postgres?sslmode=disable"
   envs:
     - name: UNUSED_CREDENTIAL
-      value: { { .NamePassword } }
+      value: {{ .NamePassword }}
     - name: UNUSED_COMMUNITY_EMAIL
-      value: { { .ContactEmail } }
+      value: {{ .ContactEmail }}
   connectProbe: "/"
   privileged: false
   resources:
