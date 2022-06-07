@@ -1,0 +1,30 @@
+apiVersion: cs.opensourceways.com/v1alpha1
+kind: CodeServer
+metadata:
+  name: {{ .Name }}
+  namespace: opengauss-tryme
+spec:
+  runtime: pgweb
+  subdomain: {{ .Subdomain }}
+  image: "swr.cn-north-4.myhuaweicloud.com/opensourceway/opengauss/webclient:v1.0.0"
+  inactiveAfterSeconds: 0
+  recycleAfterSeconds: 1800
+  command:
+    - /bin/bash
+    - -c
+    - |
+      source ~/.bashrc
+      /home/gauss/openGauss/install/bin/gs_ctl start -D /home/gauss/openGauss/data
+      gsql -d postgres  -p 5432  -h 127.0.0.1  -U gauss -W openGauss2022 -c "CREATE USER opengauss with createdb IDENTIFIED BY 'openGauss2022'"
+      /usr/bin/pgweb --bind=0.0.0.0 --listen=8080 --url "postgres://opengauss:openGauss2022@0.0.0.0:5432/postgres?sslmode=disable"
+  envs:
+    - name: UNUSED_CREDENTIAL
+      value: {{ .NamePassword }}
+    - name: UNUSED_COMMUNITY_EMAIL
+      value: {{ .ContactEmail }}
+  connectProbe: "/"
+  privileged: false
+  resources:
+    requests:
+      cpu: "500m"
+      memory: "500Mi"
