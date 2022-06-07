@@ -1,0 +1,17 @@
+{
+    "title": "opengauss-tryme",
+    "description": "opengauss-tryme",
+    "logo": "./assets/logo.png",
+    "poster": "./assets/poster.png",
+    "cover": "./assets/cover.png",
+    "container_live_time": "120",
+    "chapters": [
+      {
+        "content_dir": "opengauss-tryme",
+        "title": "opengauss-tryme",
+        "description": "opengauss-tryme",
+        "estimated_time": "10 min"
+      }
+    ]
+  }
+  
