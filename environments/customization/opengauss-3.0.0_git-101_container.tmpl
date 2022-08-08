@@ -45,7 +45,7 @@ spec:
       value: "/home/coder/git-101/workspace/project_1"
     # env for lxd launcher
     - name: LAUNCHER_ADDITIONAL_CONFIG #keep
-      value: raw.lxc=lxc.apparmor.profile=unconfined,security.nesting=false
+      value: security.nesting=false
     - name: LAUNCHER_INSTANCE_PROFILES #keep
       value: container
     - name: LAUNCHER_PROCESS_RESOURCE
