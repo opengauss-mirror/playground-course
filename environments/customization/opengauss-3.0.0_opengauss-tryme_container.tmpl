@@ -6,7 +6,7 @@ metadata:
 spec:
   runtime: pgweb
   subdomain: {{ .Subdomain }}
-  image: "swr.cn-north-4.myhuaweicloud.com/opensourceway/opengauss/webclient:v1.0.4"
+  image: "swr.cn-north-4.myhuaweicloud.com/opensourceway/opengauss/webclient:v1.0.5"
   inactiveAfterSeconds: 0
   recycleAfterSeconds: 1800
   command:
@@ -15,7 +15,7 @@ spec:
     - |
       source ~/.bashrc
       /home/gauss/openGauss/install/bin/gs_ctl start -D /home/gauss/openGauss/data
-      /usr/bin/pgweb --bind=0.0.0.0 --listen=8080 --url "postgres://openGauss:openGauss2022@0.0.0.0:5432/openGauss?sslmode=disable" --lock-session --skip-open
+      /usr/bin/pgweb --bind=0.0.0.0 --listen=8080 --url "opengauss://openGauss:openGauss2022@0.0.0.0:5432/openGauss?sslmode=disable" --lock-session --skip-open
   envs:
     - name: UNUSED_CREDENTIAL
       value: {{ .NamePassword }}
